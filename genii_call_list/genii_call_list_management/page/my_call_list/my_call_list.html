@@ -1,0 +1,135 @@
+<div class="genii-call-list-page">
+    <!-- Header Section -->
+    <div class="genii-header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="genii-title">
+                        <span class="genii-icon">📞</span>
+                        My Call List
+                    </h2>
+                    <p class="genii-subtitle" id="salesperson-name"></p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="genii-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="total-leads">0</span>
+                            <span class="stat-label">Total</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="called-count">0</span>
+                            <span class="stat-label">Called</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="interested-count">0</span>
+                            <span class="stat-label">Interested</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="genii-filter-bar">
+        <div class="container-fluid">
+            <div class="btn-group filter-buttons" role="group">
+                <button type="button" class="btn btn-outline-primary active" data-filter="all">
+                    All
+                </button>
+                <button type="button" class="btn btn-outline-primary" data-filter="New">
+                    New
+                </button>
+                <button type="button" class="btn btn-outline-primary" data-filter="Callback">
+                    Callback
+                </button>
+                <button type="button" class="btn btn-outline-primary" data-filter="Interested">
+                    Interested
+                </button>
+            </div>
+            <div class="date-picker-wrapper">
+                <input type="date" class="form-control" id="call-list-date" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Leads Grid -->
+    <div class="genii-leads-container">
+        <div class="container-fluid">
+            <div id="leads-grid" class="row g-3">
+                <!-- Lead cards will be inserted here by JavaScript -->
+            </div>
+            <div id="empty-state" class="genii-empty-state" style="display: none;">
+                <div class="empty-icon">📋</div>
+                <h3>No leads for today</h3>
+                <p>Your call list will appear here once leads are assigned</p>
+            </div>
+            <div id="loading-state" class="genii-loading-state">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Loading your call list...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lead Card Template (hidden) -->
+<template id="lead-card-template">
+    <div class="col-12 col-md-6 col-lg-4 lead-card-wrapper">
+        <div class="genii-lead-card">
+            <div class="lead-card-header">
+                <h5 class="lead-name"></h5>
+                <span class="lead-score-badge"></span>
+            </div>
+
+            <div class="lead-card-body">
+                <div class="lead-info-row">
+                    <span class="info-icon">📱</span>
+                    <a href="" class="phone-link" target="_blank"></a>
+                </div>
+                <div class="lead-info-row mobile-row" style="display: none;">
+                    <span class="info-icon">📞</span>
+                    <a href="" class="mobile-link" target="_blank"></a>
+                </div>
+                <div class="lead-info-row property-row">
+                    <span class="info-icon">🏠</span>
+                    <span class="property-address"></span>
+                </div>
+                <div class="lead-info-row location-row">
+                    <span class="info-icon">📍</span>
+                    <span class="location"></span>
+                </div>
+                <div class="lead-tags">
+                    <span class="adu-badge" style="display: none;">ADU Potential</span>
+                    <span class="deal-stage-badge"></span>
+                </div>
+            </div>
+
+            <div class="lead-card-footer">
+                <select class="form-select form-select-sm status-select">
+                    <option value="New">New</option>
+                    <option value="Called">Called</option>
+                    <option value="Interested">Interested</option>
+                    <option value="Not Interested">Not Interested</option>
+                    <option value="Callback">Callback</option>
+                    <option value="Converted">Converted</option>
+                </select>
+                <button class="btn btn-sm btn-outline-primary save-notes-btn">
+                    💬 Notes
+                </button>
+                <button class="btn btn-sm btn-primary log-call-btn">
+                    Log Call
+                </button>
+            </div>
+
+            <div class="lead-notes-section" style="display: none;">
+                <textarea class="form-control notes-textarea" placeholder="Add call notes..." rows="3"></textarea>
+                <div class="notes-actions mt-2">
+                    <button class="btn btn-sm btn-success save-notes-confirm">Save</button>
+                    <button class="btn btn-sm btn-secondary cancel-notes">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
