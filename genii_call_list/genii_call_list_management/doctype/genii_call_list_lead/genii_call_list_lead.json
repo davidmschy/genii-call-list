@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-02-24 23:59:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lead",
+  "lead_name",
+  "phone",
+  "mobile",
+  "column_break_5",
+  "property_address",
+  "city",
+  "state",
+  "section_break_9",
+  "lead_score",
+  "lead_source",
+  "adu_potential",
+  "column_break_13",
+  "deal_stage",
+  "status",
+  "section_break_16",
+  "notes",
+  "last_contacted"
+ ],
+ "fields": [
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Lead",
+   "options": "Lead",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "lead.lead_name",
+   "fieldname": "lead_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lead Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "lead.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone"
+  },
+  {
+   "fetch_from": "lead.mobile_no",
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "property_address",
+   "fieldtype": "Small Text",
+   "label": "Property Address"
+  },
+  {
+   "fetch_from": "lead.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fetch_from": "lead.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Lead Details"
+  },
+  {
+   "fieldname": "lead_score",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Lead Score"
+  },
+  {
+   "fetch_from": "lead.source",
+   "fieldname": "lead_source",
+   "fieldtype": "Link",
+   "label": "Lead Source",
+   "options": "Lead Source"
+  },
+  {
+   "default": "0",
+   "fieldname": "adu_potential",
+   "fieldtype": "Check",
+   "label": "ADU Potential"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deal_stage",
+   "fieldtype": "Data",
+   "label": "Deal Stage"
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "New\nCalled\nInterested\nNot Interested\nCallback\nConverted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "last_contacted",
+   "fieldtype": "Datetime",
+   "label": "Last Contacted"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-24 23:59:00.000000",
+ "modified_by": "Administrator",
+ "module": "Genii Call List Management",
+ "name": "Genii Call List Lead",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
